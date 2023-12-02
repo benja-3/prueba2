@@ -1,0 +1,55 @@
+{%include "navegacion/barra.html"%}
+
+
+
+{%include "dise/carrusel.html"%}
+
+
+
+<body id="top">
+    <div class="two">
+        <div class="Inicio">
+            <div class="main">
+                <input type="checkbox" id="chk" aria-hidden="true">
+
+                <form method="post">
+                    <div class="centro">
+                        {% csrf_token %}
+                        <br>
+                        <br>
+                        <label >Crear Carreras</label>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        
+                        <label >Instituciones</label>
+                        <select name="institucion"> 
+                            {% for c in instituciones %}
+                                <option style="height: 40px;"value="{{ c.nombre }}">{{ c.nombre }}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <label>Nombre</label>
+                         <br>
+                        <input type="text" name="Nombre" placeholder="Nombre">
+                        <br>
+                        <label>Arancel</label>
+                        <br>
+                        <input type="number" name="Arancel" placeholder="Arancel">
+                        <br>
+                        <label>Duración</label>
+                        <br>
+                        <input type="number" name="Duracion" placeholder="Duración">
+
+                        <button>Enviar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>

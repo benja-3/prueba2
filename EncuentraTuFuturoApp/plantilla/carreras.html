@@ -1,0 +1,57 @@
+{%include "navegacion/barra.html"%}
+
+
+
+{%include "dise/carrusel.html"%}
+
+<!-- {% if user.is_authenticated %}
+    aqui va el boton de favorito
+{% endif %} -->
+
+<body>
+  <div class="wrapper row2">
+    <nav id="mainav" class="clear">
+
+      <a href="{% url 'instituciones' %}">instituciones</a>
+
+      <table>
+        <thead>
+          <tr>
+            <th>institucion</th>
+            <th>nombre carrera</th>
+            <th>arancel</th>
+            <th>duracion</th>
+            <th>url</th>
+            <th>opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in carrera %}
+          <tr>
+            <td>{{ c.idinstitucion.nombre }}</td>
+            <td>{{ c.Nombre }}</td>
+            <td>{{ c.Arancel }}</td>
+            <td>{{ c.Duracion }}</td>
+            <td><a href="{{ c.idinstitucion.url }}">matriculate</a></td>
+           
+            <form action="{% url 'agregar_favorito' %}" method="post">
+              {% csrf_token %}
+              <td>
+                <input type="hidden" name="idCarrera" value="{{ c.idcarrera }}">
+              <button type="submit">algooo</button></td>
+          </form>
+        
+              {% if user.is_authenticated %}
+              <a href="{% url 'eliminarCarrera' c.idcarrera %}">eliminar</a>
+              <a href="{% url 'editarC' c.idcarrera %}">editar</a>
+              {% endif %}
+             
+            
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </nav>
+  </div>
+
+</body>

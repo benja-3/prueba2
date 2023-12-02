@@ -1,0 +1,50 @@
+{%include "navegacion/barra.html"%}
+
+
+
+{%include "dise/carrusel.html"%}
+
+<body id="top">
+    <div class="two">
+        <div class="Inicio">
+            <div class="main">
+                <input type="checkbox" id="chk" aria-hidden="true">
+
+                <form method="post">
+                    <div class="centro">
+                        {% csrf_token %}
+                        <br>
+                        <br>
+                        <label >Crear Institucioness</label>
+                        <br>
+                        <br>
+                        <br>
+                        <label>nombre institucion</label>
+                        <br>
+                        
+                        <input type="text" name="nombre">
+                        <br>
+                        <br>
+                        <label>region</label>
+                        <br>
+                        <input type="text" name="region">
+                        <br>
+                        <br>
+                        <label>informacion</label>
+                        <br>
+                        <input type="text" name="informacion">
+                        <br>
+                        <br>
+                        <label>url</label>
+                        <br>
+                        
+                        <input type="text" name="url">
+                        <br>
+                        <br>
+                        <br>
+                        <button>Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

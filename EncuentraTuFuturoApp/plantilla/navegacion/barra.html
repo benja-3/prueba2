@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Encuentra tu futuro 😁</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{% static 'css\styles\layout.css' %}" rel="stylesheet" type="text/css" media="all">
+  <link href="{% static 'css\styles\style.css' %}" rel="stylesheet" type="text/css" media="all">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{% static 'css\styles\layout.css' %}" rel="stylesheet" type="text/css" media="all">
+  <link href="{% static 'css\styles\style.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+  <div class="wrapper row0">
+    <div id="topbar" class="clear">
+    </div>
+  </div>
+  <div class="wrapper row1">
+    <header id="header" class="clear">
+      <div id="logo" class="fl_left">
+        <h1><a href="{% url 'inicio' %}">Encuentra tu futuro</a></h1>
+      </div>
+    </header>
+  </div>
+  <div class="wrapper row2">
+    <div class="rounded">
+      <nav id="mainav" class="clear">
+        <ul class="clear">
+          <li><a href="{% url 'inicio' %}">Inicio</a></li>
+          <li><a href="{% url 'quienes_somos' %}">Quienes Somos</a></li>
+          <li><a href="{% url 'carreras' %}">carreras</a></li>
+          {% if request.session.user%}
+          <li><a href="{% url 'CrearCarrera' %}">Crear carrera</a></li>
+          <li><a href="{% url 'crearIntitucion' %}">Crear institucion</a></li>
+          {% endif %}
+          {% if request.session.correo or request.session.Email %}
+          <li class="nav-item">
+            {%if request.session.correo%}
+              <li><a href="{% url 'favorito' %}">favorito</a></li>
+              <a href="{% url 'cerrarUsuario' %}">Cerrar Sesión</a>
+            {%elif request.session.Email%}
+              <a href="{% url 'cerrarAdministrador' %}">Cerrar Sesión</a>
+              {% endif %}
+          </li>
+          {{ request.session.Nombre}}
+          {{ request.session.Email}}
+          {% else %}
+       
+        <li>
+        <div class="navbar">
+          <div class="menu-btn" onclick="toggleMenu()">
+            📜
+          </div>
+        </ul>
+          <ul class="nav-list" id="navList" hidden>
+            <li><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+            <li><a class="nav-link" href="{% url 'loginadm' %}">Login administrador</a></li>
+            <li><a class="nav-link" href="{% url 'registro' %}">Registro</a></li>
+            <li><a class="nav-link" href="{% url 'ingresoadm' %}">Registro administrador</a></li>
+          </ul>
+        </li>
+          {% endif %} 
+        </div>
+      </nav>
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      var navList = document.getElementById('navList');
+      navList.hidden = !navList.hidden;
+    }
+  </script>
+</body>
+</html>

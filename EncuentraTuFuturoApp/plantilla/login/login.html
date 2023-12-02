@@ -1,0 +1,47 @@
+{% load static %}
+
+{%include "navegacion/barra.html"%}
+
+<head>
+  <link href="{% static 'css\styles\style.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+
+
+
+<body id="top">
+  <div class="two">
+    <div class="Inicio">
+      <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+        {% if request.session.correo %}
+        
+        {% else %}
+        <form method="post">
+          {% csrf_token %}
+          <div class="centro">
+            <br>
+            <br>
+            <br>
+            <label for="chk" aria-hidden="true">Inicio de Sesion</label>
+            
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            <br>
+            <input type="email" name="email" placeholder="Email" required="">
+            <br>
+            <input type="password" name="password" placeholder="Password" required="">
+            <button>Iniciar Sesión</button>
+          </div>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+
+</body>
+
+</html>

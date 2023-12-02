@@ -1,0 +1,32 @@
+
+{%include "navegacion/barra.html"%}
+
+
+
+{%include "dise/carrusel.html"%}
+
+<select name="institucion"> 
+    {% for c in instituciones %}
+        <option style="height: 40px;"value="{{ c.nombre }}">{{ c.nombre }}</option>
+    {% endfor %}
+</select>
+<body>
+    <h1>registro</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label>Nombre:</label>
+        <input type="text" name="Nombre">
+        <label>Apellido:</label>
+        <input type="text" name="Apellido">
+        <label>Email:</label>
+        <input type="text" name="correo">
+        <label>Contraseña:</label>
+        <input type="text" name="Contraseña">
+        <input type="submit">
+
+    </form>
+
+    
+
+</body>

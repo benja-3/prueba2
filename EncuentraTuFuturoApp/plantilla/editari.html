@@ -1,0 +1,19 @@
+{%include "navegacion/barra.html"%}
+
+
+<form method="post" action="">
+    {% csrf_token %}
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" value="{{ institucion.nombre }}" required>
+    <br>
+    <label for="region">Region:</label>
+    <input type="text" name="region" value="{{ institucion.region }}" required>
+    <br>
+    <label for="informacion">Informacion:</label>
+    <input type="text" name="informacion" value="{{ institucion.informacion }}" required>
+    <br>
+    <label for="url">URL:</label>
+    <input type="url" name="url" value="{{ institucion.url }}" required>
+    <br>
+    <button type="submit">Guardar cambios</button>
+  </form>

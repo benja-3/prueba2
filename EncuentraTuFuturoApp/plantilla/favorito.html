@@ -1,0 +1,26 @@
+{%include "navegacion/barra.html"%}
+
+
+
+{%include "dise/carrusel.html"%}
+
+<table>
+    {% if fav %}
+        <td>
+            <th>institucion</th>
+            <th>nombre carrera</th>
+            <th>arancel</th>
+            <th>duracion</th>
+            <th>url</th>
+        </td>
+        {% for f in fav %}
+            <td>
+                <tr>{{f.IdCarrera.IdInstitucion.nombre}}</tr>
+                <tr>{{f.IdCarrera.Nombre}}</tr>
+                <tr>{{f.IdCarrera.Arancel}}</tr>
+                <tr>{{f.IdCarrera.Duracion}}</tr>
+                <tr>{{f.IdCarrera.IdInstitucion.url}}</tr>
+            </td>
+        {% endfor %}
+    {% endif %}
+</table>

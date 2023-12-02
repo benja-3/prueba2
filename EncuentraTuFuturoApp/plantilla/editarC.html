@@ -1,0 +1,26 @@
+
+
+
+
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>Instituciones</label>
+    <select name="institucion"> 
+        {% for c in instituciones %}
+            <option style="height: 40px;" value="{{ c.nombre }}"selected>{{ c.nombre }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Nombre</label>
+    <input type="text" name="Nombre" placeholder="Nombre" value="{{ carrera.Nombre }}">
+
+    <label>Arancel</label>
+    <input type="number" name="Arancel" placeholder="Arancel" value="{{ carrera.Arancel }}">
+
+    <label>Duración</label>
+    <input type="number" name="Duracion" placeholder="Duración" value="{{ carrera.Duracion }}">
+
+    <input type="submit" value="Guardar cambios">
+</form>

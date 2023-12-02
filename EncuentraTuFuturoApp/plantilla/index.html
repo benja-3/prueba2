@@ -1,0 +1,177 @@
+{% load static %}
+
+{%include "navegacion/barra.html"%}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Encuentra tu futuro 😁</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{% static 'css\styles\layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+
+
+<body id="top">
+  <div class="wrapper row0">
+    <div id="topbar" class="clear">
+
+    </div>
+  </div>
+  {% include "dise/carrusel.html" %}
+
+
+  <div class="wrapper row3">
+    <div class="rounded">
+
+      <main class="container clear">
+        <h2 class="centro">Notificias &amp; Eventos</h2>
+        <div class="group btmspace-30">
+          <div class="one_quarter first">
+
+            <ul class="nospace">
+              <li class="btmspace-15"><a
+                  href="https://redgol.cl/tendencias/los-pros-y-contras-de-estudiar-con-el-cae-para-estudiar-admision-2024-educacion-universidad-20231012-RDG-159478.html"
+                  target="_blank">
+                  <em class="heading">Crédito con Aval del Estado: Los pros y contras de solicitar el CAE para
+                    estudiar</em> <img class="borderedbox" src="static\images\demo\slider\cae.jpg" alt=""></a></li>
+              <li class="btmspace-15"><a
+                  href="https://redgol.cl/tendencias/como-llenar-el-fuas-tutorial-paso-a-paso-para-tener-becas-creditos-y-gratuidad-20231011-RDG-157721.html"
+                  target="_blank"><em class="heading">¿Cómo llenar el FUAS? Tutorial paso a paso para tener becas,
+                    créditos y gratuidad</em> <img class="borderedbox" src="static\images\demo\slider\fuas.jpg"
+                    alt=""></a></li>
+              <li class="btmspace-15"><a
+                  href="https://www.13.cl/programas/servicios-13/actualidad/paes-2023-cuando-y-a-que-hora-se-realizan-las-pruebas"
+                  target="_blank"><em class="heading"></em>PAES 2023: ¿Cuándo y a qué hora se realizan las pruebas? <img
+                    class="borderedbox" src="static\images\demo\slider\paes.jpg" alt=""></a></li>
+            </ul>
+          </div>
+
+          <div class="one_half">
+            <ul class="nospace listing">
+              <li class="clear container">
+                <p class="nospace btmspace-15 centro"><a href="#">buscador</a></p>
+                <div class="one_half">
+                  <select name="institucion"> 
+                    {% for c in instituciones %}
+                        <option style="height: 40px;"value="{{ c.nombre }}">{{ c.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <div class="one_half">
+                  <select name="carreras"> 
+                    {% for c in Carrera %}
+                        <option style="height: 40px;"value="{{ c.Nombre }}">{{ c.Nombre }}</option>
+                    {% endfor %}
+                </select>
+                </div>
+                </div>
+              </li>
+              <li class="clear">
+                <div class="imgl borderedbox"><img src="static\images\demo\slider\preupdv.jpg" alt=""></div>
+                <p class="nospace btmspace-15"><a href="https://www.preupdv.cl/" target="_blank">preupdv</a></p>
+                <p>This is a W3C compliant free website template from <a href="https://www.preupdv.cl/" title="Preupdv"
+                    target="_blank">OS Templates</a>. This template is distributed using a <a
+                    href="https://www.preupdv.cl/" target="_blank">Website Template Licence</a></p>
+              </li>
+              <!-- <li class="clear">
+              <div class="imgl borderedbox"><img src="images/demo/120x120.gif" alt=""></div>
+              <p class="nospace btmspace-15"><a href="#">Sentumquisque morbi dui congue.</a></p>
+              <p>For more CSS templates visit <a href="http://www.os-templates.com/">Free Website Templates</a>.
+                Attincidunt vel nam a maurisus lacinia consectetus magnisl sed ac morbi. Inmaurisus habitur
+                pretium eu
+                et ac vest penatibus id lacus parturpis.</p>
+            </li> -->
+            </ul>
+            <p class="right"><a href="#">Click para ver mas noticias &raquo;</a></p>
+          </div>
+          <div class="one_quarter sidebar">
+            <div class="sdb_holder">
+              <h6>Virtual Tour</h6>
+              <div class="mediacontainer"><img src="static\images\demo\slider\video.gif" alt="">
+                <p><a href="#">View More Tour Videos Here</a></p>
+              </div>
+            </div>
+            <!-- <div class="sdb_holder">
+            <h6>Quick Information</h6>
+            <ul class="nospace quickinfo">
+              <li class="clear"><a href="#"><img src="images/demo/80x80.gif" alt=""> Make An Application</a></li>
+              <li class="clear"><a href="#"><img src="images/demo/80x80.gif" alt=""> Order A Prospectus</a></li>
+            </ul>
+          </div> -->
+          </div>
+        </div>
+        <div id="twitter" class=" ">
+          <div class="center "><br>
+            <a>nuestros colaboradores</a>
+          </div>
+          <div>
+            <img src="static\images\demo\slider\u.jpg">
+          </div>
+
+        </div>
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+
+        <!-- <div class="wrapper row4">
+    <div class="rounded">
+      <footer id="footer" class="clear">
+        ################################################################################################ 
+        <div class="one_third first">
+          <figure class="center"><img class="btmspace-15" src="images/demo/worldmap.png" alt="">
+            <figcaption><a href="#">Find Us With Google Maps &raquo;</a></figcaption>
+          </figure>
+        </div>
+        <div class="one_third">
+          <address>
+            Long Educational Facility Name<br>
+            Address Line 2<br>
+            Town/City<br>
+            Postcode/Zip<br>
+            <br>
+            <i class="fa fa-phone pright-10"></i> xxxx xxxx xxxxxx<br>
+            <i class="fa fa-envelope-o pright-10"></i> <a href="#">contact@domain.com</a>
+          </address>
+        </div>
+        <div class="one_third">
+          <p class="nospace btmspace-10">Stay Up to Date With What's Happening</p>
+          <ul class="faico clear">
+            <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="faicon-flickr" href="#"><i class="fa fa-flickr"></i></a></li>
+            <li><a class="faicon-rss" href="#"><i class="fa fa-rss"></i></a></li>
+          </ul>
+          <form class="clear" method="post" action="#">
+            <fieldset>
+              <legend>Subscribe To Our Newsletter:</legend>
+              <input type="text" value="" placeholder="Enter Email Here&hellip;">
+              <button class="fa fa-sign-in" type="submit" title="Sign Up"><em>Sign Up</em></button>
+            </fieldset>
+          </form>
+        </div>
+         ################################################################################################ 
+      </footer>-->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- <div class="wrapper row5">
+    <div id="copyright" class="clear">
+      <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Domain Name</a></p>
+      <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/"
+      title="Free Website Templates">OS Templates</a></p>
+    </div>
+  </div> -->
+  <!-- JAVASCRIPTS -->
+  <script src="layout/scripts/jquery.min.js"></script>
+  <script src="layout/scripts/jquery.fitvids.min.js"></script>
+  <script src="layout/scripts/jquery.mobilemenu.js"></script>
+  <script src="layout/scripts/tabslet/jquery.tabslet.min.js"></script>
+
+</body>
+
+</html>

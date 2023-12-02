@@ -1,0 +1,75 @@
+{% load static %}
+
+{%include "navegacion/barra.html"%}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Encuentra tu futuro 😁</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <link rel="stylesheet" type="text/css" href="slide navbar style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+  <link href="{% static 'css\styles\layout.css' %}" rel="stylesheet" type="text/css" media="all">
+  <link rel="stylesheet" href="{% static 'layout\styles\style.css' %}">
+
+</head>
+
+<body id="top">
+   
+        <div class="Inicio">
+            <div class="main">
+                <input type="checkbox" id="chk" aria-hidden="true">
+                <div class="signup">
+                    <form method="post" action="{% url 'ingresoadm' %}">
+                        {% csrf_token %}
+                        <label for="Nombreadm">Nombre:</label>
+                        <input type="text" name="Nombreadm" required>
+    
+                        <label for="Apellidoadm">Apellido:</label>
+                        <input type="text" name="Apellidoadm" required>
+    
+                        <label for="correoadm">Email:</label>
+                        <input type="email" name="correoadm" required>
+    
+                        <label for="Contraseñaadm">Contraseña:</label>
+                        <input type="password" name="Contraseñaadm" required>
+    
+                        <input type="submit" value="Registrarse">
+                    </form>
+    
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+     
+    </div>
+    
+  </div>
+
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- <div class="wrapper row5">
+    <div id="copyright" class="clear">
+      <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Domain Name</a></p>
+      <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/"
+      title="Free Website Templates">OS Templates</a></p>
+    </div>
+  </div> -->
+  <!-- JAVASCRIPTS -->
+  <script src="layout/scripts/jquery.min.js"></script>
+  <script src="layout/scripts/jquery.fitvids.min.js"></script>
+  <script src="layout/scripts/jquery.mobilemenu.js"></script>
+  <script src="layout/scripts/tabslet/jquery.tabslet.min.js"></script>
+</body>
+
+</html>

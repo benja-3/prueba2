@@ -1,0 +1,68 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Encuentra tu futuro 😁</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{% static 'css\styles\layout.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="{% static 'css\styles\style.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+
+
+
+<body id="top">
+  <div class="wrapper row0">
+    <div id="topbar" class="clear">
+
+    </div>
+  </div>
+  <div class="wrapper row1">
+    <header id="header" class="clear">
+      <div id="logo" class="fl_left">
+        <h1><a href="{% url 'inicio' %}">Encuentra tu futuro</a></h1>
+      </div>
+      <!-- <div class="fl_right">
+      <form class="clear" method="post" action="#">
+        <fieldset>
+          <legend>Search:</legend>
+          <input type="text" value="" placeholder="Search Here">
+          <button class="fa fa-search" type="submit" title="Search"><em>Search</em></button>
+        </fieldset>
+      </form> buscador
+    </div> -->
+    </header>
+  </div>
+
+  <div class="wrapper row2">
+    <div class="rounded">
+      <nav id="mainav" class="clear">
+        <ul class="clear">
+          <li><a href="{% url 'inicio' %}">Inicio</a></li>
+          <li><a href="{% url 'quienes_somos' %}">Quienes Somos</a></li>
+          {% if perms.app.view_carreras%}
+          <li><a href="{% url 'carreras' %}">carreras</a></li>
+          {% endif %}
+          {% if request.session.Email %}
+          
+          <li class="nav-item">
+            <a  href="{% url 'cerrarAdministrador' %}">Cerrar Sesión</a>
+          
+          </li>
+          {{ request.session.Email}} 
+          {% else %}
+          <li >
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+            <a class="nav-link" href="{% url 'loginadm' %}">Login administrador</a>
+            <a class="nav-link" href="{% url 'registro' %}">Registro</a>
+          </li>
+          {% endif %} 
+        </ul>
+    
+      </nav>
+    </div>
+  </div>
+</body>
