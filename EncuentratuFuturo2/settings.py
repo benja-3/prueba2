@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-ok$20r55a-hcde=3o!7syn1004*dn%p7vr(p5mr$(4ij&bc@i=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['encuentratufuturo.azurewebsites.net']
 
 LOGIN_REDIRECT_URL ='/'
 LOGOUT_REDIRECT_URL ='/'
