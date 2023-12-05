@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'EncuentratuFuturo',
         'USER': 'root',
         'PASSWORD' :'',
-        'HOST' : 'localhost',
+        'HOST' : ''encuentratufuturo.azurewebsites.net',
         'PORT' : '3306',
     }
 }
